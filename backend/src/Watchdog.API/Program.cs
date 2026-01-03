@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Serilog;
 using System;
+using Watchdog.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,11 +31,11 @@ builder.Services.AddCors(options =>
 });
 
 // DbContext
-/*builder.Services.AddDbContext<AppDbContext>(options =>
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
     builder.Configuration.GetConnectionString("DefaultConnection")
     )
-);*/
+);
 
 // Dependency Injection
 //builder.Services.AddScoped<IClienteRepository, ClienteRepository>();

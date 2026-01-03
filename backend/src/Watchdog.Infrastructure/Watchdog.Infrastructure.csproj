@@ -1,6 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <Compile Remove="Migrations\20260102220644_CreateCustomersTable.cs" />
+    <Compile Remove="Migrations\20260102220644_CreateCustomersTable.Designer.cs" />
+    <Compile Remove="Migrations\AppDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Watchdog.Domain\Watchdog.Domain.csproj" />
     <ProjectReference Include="..\Watchdog.Application\Watchdog.Application.csproj" />
   </ItemGroup>
@@ -12,6 +18,10 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <PropertyGroup>
